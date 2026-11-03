@@ -1,0 +1,274 @@
+/* ---------- 기본 정리 ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "SUIT", "Noto Sans KR", sans-serif;
+    background-color: #f4faf4;
+    color: #1b4332;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    padding: 0 40px;
+}
+.title {
+    font-size: 28px;
+    margin: 50px 0 16px;
+}
+
+/* ---------- 1. 헤더 (flex) ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 68px;
+    background-color: #2d6a4f;
+    color: #fff;
+}
+.logo {
+    font-size: 28px;
+}
+.nav {
+    display: flex;
+    gap: 24px;
+    font-weight: 600;
+}
+.nav li a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- 2. 히어로 (flex / column) ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    height: 280px;
+    margin-top: 32px;
+    background-color: #d8f3dc;
+}
+.eyebrow {
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: #52796f;
+}
+.hero h2 {
+    font-size: 40px;
+    color: #2d6a4f;
+}
+.hero-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+.btn {
+    padding: 14px 20px;
+    border: 2px solid #2d6a4f;
+    font-weight: 600;
+}
+.btn.fill {
+    background-color: #2d6a4f;
+    color: #fff;
+}
+.btn.line {
+    background-color: #fff;
+    color: #2d6a4f;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* ---------- 3. 이달의 화분 (flex) ---------- */
+.cards {
+    display: flex;
+    gap: 24px;
+}
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px 24px 22px;
+    background-color: #fff;
+    border: 1px solid #e3ece5;
+    height: 298px;
+}
+.card.pick {
+    border: 2px solid #2d6a4f;
+}
+.card .emoji {
+    font-size: 48px;
+    text-align: center;
+}
+.card h3 {
+    font-size: 22px;
+}
+.card .desc {
+    font-size: 15px;
+    line-height: 1.6;
+}
+.buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.price {
+    font-weight: 700;
+    font-size: 17px;
+}
+.add {
+    padding: 8px 14px;
+    background-color: #f4a261;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+.add:hover {
+    background-color: #e76f51;
+}
+
+/* ---------- 4. 키우는 법 3단계 (grid) ---------- */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.steps li {
+    padding: 14px 20px 22px;
+    background-color: #fff;
+    text-align: center;
+}
+.num {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #2d6a4f;
+    color: #fff;
+    font-weight: 700;
+}
+.steps h3 {
+    font-size: 20px;
+    margin: 6px 0;
+}
+
+/* ---------- 태그 (flex wrap) ---------- */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 14px 18px;
+}
+.tags li {
+    padding: 8px 14px;
+    background-color: #d8f3dc;
+    color: #2d6a4f;
+    font-size: 14px;
+}
+
+/* ---------- 5. 매장 둘러보기 (grid-template-areas) ---------- */
+.store {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+        "main corner gift"
+        "main cafe class";
+    gap: 16px;
+}
+.place {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #e3ece5;
+}
+.place .emoji {
+    font-size: 40px;
+}
+.place h3 {
+    font-size: 20px;
+}
+.main-store {
+    grid-area: main;
+    height: auto;
+    background-color: #2d6a4f;
+    color: #fff;
+}
+.main-store .emoji {
+    font-size: 80px;
+}
+.corner { grid-area: corner; }
+.gift   { grid-area: gift; }
+.cafe   { grid-area: cafe; }
+.class  { grid-area: class; }
+
+/* ---------- 6. 새 소식 받기 (flex) ---------- */
+.news-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 24px;
+}
+.news-form label {
+    font-weight: 700;
+    margin-right: 4px;
+}
+.news-form input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #999;
+    font-family: inherit;
+}
+.news-form select {
+    padding: 12px;
+    font-family: inherit;
+}
+.news-form button {
+    padding: 12px 20px;
+    margin-left: 8px;
+    background-color: #2d6a4f;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.news-form button:hover {
+    background-color: #1b4332;
+}
+
+/* ---------- 7. 푸터 (flex) ---------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 40px;
+    height: 64px;
+    background-color: #1b4332;
+    color: #fff;
+    font-size: 14px;
+}
+.links {
+    display: flex;
+    gap: 18px;
+    font-weight: 600;
+}
+.links a:hover {
+    text-decoration: underline;
+}
