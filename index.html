@@ -4,73 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>초록 화분</title>
-    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Noto+Sans+KR:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 1. 헤더 (flex) -->
     <header>
         <h1 class="logo">🌿 초록 화분</h1>
         <nav>
-            <ul class="nav">
-                <li><a href="#month">이달의 화분</a></li>
-                <li><a href="#how">키우는 법</a></li>
-                <li><a href="#store">매장 둘러보기</a></li>
+            <ul class="menu">
+                <li><a href="#plants">이달의 화분</a></li>
+                <li><a href="#care">키우는 법</a></li>
+                <li><a href="#shop">매장 둘러보기</a></li>
                 <li><a href="#news">소식 받기</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- 2. 히어로 (flex / column) -->
         <section class="hero">
-            <p class="eyebrow">GREEN POT SHOP</p>
+            <p class="sub">GREEN POT SHOP</p>
             <h2>책상 위에 작은 숲을 들여요</h2>
-            <p class="sub">처음 키워도 괜찮아요. 물 주는 날까지 알려 드려요.</p>
-            <div class="hero-btns">
-                <a href="#month" class="btn fill">화분 구경하기</a>
-                <a href="#how" class="btn line">키우는 법 보기</a>
+            <p>처음 키워도 괜찮아요. 물 주는 날까지 알려 드려요.</p>
+            <div class="btn-wrap">
+                <a href="#plants" class="btn">화분 구경하기</a>
+                <a href="#care" class="btn line">키우는 법 보기</a>
             </div>
         </section>
 
-        <!-- 3. 이달의 화분 (flex 카드 3개) -->
-        <section id="month">
-            <h2 class="title">이달의 화분</h2>
+        <section id="plants">
+            <h2>이달의 화분</h2>
             <div class="cards">
                 <article class="card">
-                    <p class="emoji">🌵</p>
+                    <p class="icon">🌵</p>
                     <h3>미니 선인장</h3>
-                    <p class="desc">한 달에 한 번만 물을 주면 돼요.</p>
-                    <div class="buy">
-                        <span class="price">8,000원</span>
-                        <a href="#" class="add">담기</a>
+                    <p>한 달에 한 번만 물을 주면 돼요.</p>
+                    <div class="price">
+                        <strong>8,000원</strong>
+                        <button>담기</button>
                     </div>
                 </article>
                 <article class="card pick">
-                    <p class="emoji">🪴</p>
+                    <p class="icon">🪴</p>
                     <h3>몬스테라</h3>
-                    <p class="desc">잎이 크고 시원해서 거실에 두기 좋아요. 새 잎이 날 때마다 구멍이 하나씩 늘어나는 걸 보는 재미가 있어요.</p>
-                    <div class="buy">
-                        <span class="price">25,000원</span>
-                        <a href="#" class="add">담기</a>
+                    <p>잎이 크고 시원해서 거실에 두기 좋아요. 새 잎이 날 때마다 구멍이 하나씩 늘어나는 걸 보는 재미가 있어요.</p>
+                    <div class="price">
+                        <strong>25,000원</strong>
+                        <button>담기</button>
                     </div>
                 </article>
                 <article class="card">
-                    <p class="emoji">🌱</p>
+                    <p class="icon">🌱</p>
                     <h3>스투키</h3>
-                    <p class="desc">밤에도 공기를 맑게 해 줘서 침실에 딱이에요.</p>
-                    <div class="buy">
-                        <span class="price">15,000원</span>
-                        <a href="#" class="add">담기</a>
+                    <p>밤에도 공기를 맑게 해 줘서 침실에 딱이에요.</p>
+                    <div class="price">
+                        <strong>15,000원</strong>
+                        <button>담기</button>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- 4. 키우는 법 3단계 (grid) + 태그 (flex wrap) -->
-        <section id="how">
-            <h2 class="title">키우는 법 3단계</h2>
-            <ol class="steps">
+        <section id="care">
+            <h2>키우는 법 3단계</h2>
+            <ol class="step">
                 <li>
                     <span class="num">1</span>
                     <h3>빛</h3>
@@ -103,53 +99,50 @@
             </ul>
         </section>
 
-        <!-- 5. 매장 둘러보기 (grid-template-areas) -->
-        <section id="store">
-            <h2 class="title">매장 둘러보기</h2>
-            <div class="store">
-                <div class="place main-store">
+        <section id="shop">
+            <h2>매장 둘러보기</h2>
+            <ul class="gallery">
+                <li>
                     <p class="emoji">🏡</p>
                     <h3>성수동 본점</h3>
                     <p>화분 200종이 기다려요</p>
-                </div>
-                <div class="place corner">
+                </li>
+                <li>
                     <p class="emoji">🌻</p>
                     <h3>분갈이 코너</h3>
-                </div>
-                <div class="place gift">
+                </li>
+                <li>
                     <p class="emoji">🎁</p>
                     <h3>선물 포장</h3>
-                </div>
-                <div class="place cafe">
+                </li>
+                <li>
                     <p class="emoji">☕</p>
                     <h3>식물 카페</h3>
-                </div>
-                <div class="place class">
+                </li>
+                <li>
                     <p class="emoji">🧑‍🌾</p>
                     <h3>원데이 클래스</h3>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
 
-        <!-- 6. 새 소식 받기 (flex 폼) -->
         <section id="news">
-            <h2 class="title">새 소식 받기</h2>
-            <form class="news-form">
+            <h2>새 소식 받기</h2>
+            <form>
                 <label for="email">이메일</label>
-                <input type="email" id="email" placeholder="green@pot.com">
+                <input type="email" name="email" id="email" placeholder="green@pot.com">
                 <select name="cycle">
-                    <option>매주</option>
-                    <option>매월</option>
+                    <option value="weekly">매주</option>
+                    <option value="monthly">매월</option>
                 </select>
                 <button type="submit">구독하기</button>
             </form>
         </section>
     </main>
 
-    <!-- 7. 푸터 (flex) -->
     <footer>
         <p>© 2026 초록 화분</p>
-        <ul class="links">
+        <ul class="sns">
             <li><a href="#">인스타그램</a></li>
             <li><a href="#">블로그</a></li>
             <li><a href="#">고객센터</a></li>

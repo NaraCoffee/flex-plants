@@ -1,52 +1,60 @@
-/* ---------- 기본 정리 ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: "SUIT", "Noto Sans KR", sans-serif;
-    background-color: #f4faf4;
-    color: #1b4332;
-}
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333333;
+    background-color: #f6fbf4;
+}
+h1,
+h2,
+h3 {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: normal;
+}
+
 main {
-    padding: 0 40px;
+   max-width: 1000px;
+   margin : auto;
 }
-.title {
-    font-size: 28px;
+section h2 {
+    font-size: 30px;
+    color: #2d6a4f;
     margin: 50px 0 16px;
 }
 
-/* ---------- 1. 헤더 (flex) ---------- */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
     height: 68px;
+    padding: 0 40px;
     background-color: #2d6a4f;
     color: #fff;
 }
 .logo {
-    font-size: 28px;
+    font-size: 30px;
 }
-.nav {
+.menu {
     display: flex;
     gap: 24px;
-    font-weight: 600;
+    font-weight: 700;
 }
-.nav li a:hover {
+.menu li a:hover {
     text-decoration: underline;
 }
 
-/* ---------- 2. 히어로 (flex / column) ---------- */
 .hero {
     display: flex;
     flex-direction: column;
@@ -57,16 +65,16 @@ header {
     margin-top: 32px;
     background-color: #d8f3dc;
 }
-.eyebrow {
+.hero .sub {
     font-size: 14px;
     letter-spacing: 8px;
     color: #52796f;
 }
 .hero h2 {
-    font-size: 40px;
-    color: #2d6a4f;
+    margin: 0;
+    font-size: 44px;
 }
-.hero-btns {
+.btn-wrap {
     display: flex;
     gap: 12px;
     margin-top: 10px;
@@ -74,11 +82,9 @@ header {
 .btn {
     padding: 14px 20px;
     border: 2px solid #2d6a4f;
-    font-weight: 600;
-}
-.btn.fill {
     background-color: #2d6a4f;
     color: #fff;
+    font-weight: 700;
 }
 .btn.line {
     background-color: #fff;
@@ -88,7 +94,7 @@ header {
     opacity: 0.8;
 }
 
-/* ---------- 3. 이달의 화분 (flex) ---------- */
+
 .cards {
     display: flex;
     gap: 24px;
@@ -98,53 +104,54 @@ header {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    min-height: 298px;
     padding: 28px 24px 22px;
     background-color: #fff;
     border: 1px solid #e3ece5;
-    height: 298px;
 }
 .card.pick {
     border: 2px solid #2d6a4f;
 }
-.card .emoji {
+.card .icon {
     font-size: 48px;
     text-align: center;
 }
 .card h3 {
-    font-size: 22px;
+    font-size: 24px;
 }
-.card .desc {
+.card p {
     font-size: 15px;
     line-height: 1.6;
 }
-.buy {
+.price {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
 }
-.price {
-    font-weight: 700;
+.price strong {
     font-size: 17px;
 }
-.add {
+.price button {
     padding: 8px 14px;
+    border: none;
     background-color: #f4a261;
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
 }
-.add:hover {
+.price button:hover {
     background-color: #e76f51;
 }
 
-/* ---------- 4. 키우는 법 3단계 (grid) ---------- */
-.steps {
+
+.step {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
-.steps li {
+.step li {
     padding: 14px 20px 22px;
     background-color: #fff;
     text-align: center;
@@ -158,12 +165,11 @@ header {
     color: #fff;
     font-weight: 700;
 }
-.steps h3 {
-    font-size: 20px;
+.step h3 {
     margin: 6px 0;
+    font-size: 22px;
 }
 
-/* ---------- 태그 (flex wrap) ---------- */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -178,8 +184,7 @@ header {
     font-size: 14px;
 }
 
-/* ---------- 5. 매장 둘러보기 (grid-template-areas) ---------- */
-.store {
+.gallery {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas:
@@ -187,7 +192,7 @@ header {
         "main cafe class";
     gap: 16px;
 }
-.place {
+.gallery li {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,78 +202,78 @@ header {
     background-color: #fff;
     border: 1px solid #e3ece5;
 }
-.place .emoji {
-    font-size: 40px;
-}
-.place h3 {
-    font-size: 20px;
-}
-.main-store {
+.gallery li:nth-child(1) {
     grid-area: main;
     height: auto;
     background-color: #2d6a4f;
     color: #fff;
 }
-.main-store .emoji {
+.gallery li:nth-child(2) { grid-area: corner; }
+.gallery li:nth-child(3) { grid-area: gift; }
+.gallery li:nth-child(4) { grid-area: cafe; }
+.gallery li:nth-child(5) { grid-area: class; }
+.emoji {
+    font-size: 40px;
+}
+.gallery li:nth-child(1) .emoji {
     font-size: 80px;
 }
-.corner { grid-area: corner; }
-.gift   { grid-area: gift; }
-.cafe   { grid-area: cafe; }
-.class  { grid-area: class; }
+.gallery h3 {
+    font-size: 22px;
+}
 
-/* ---------- 6. 새 소식 받기 (flex) ---------- */
-.news-form {
+
+form {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 20px 24px;
 }
-.news-form label {
+form label {
     font-weight: 700;
     margin-right: 4px;
 }
-.news-form input {
+form input {
     flex: 1;
     padding: 12px;
     border: 2px solid #999;
     font-family: inherit;
 }
-.news-form select {
+form select {
     padding: 12px;
     font-family: inherit;
 }
-.news-form button {
-    padding: 12px 20px;
+form button {
     margin-left: 8px;
+    padding: 12px 20px;
+    border: none;
     background-color: #2d6a4f;
     color: #fff;
-    border: none;
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
 }
-.news-form button:hover {
+form button:hover {
     background-color: #1b4332;
 }
 
-/* ---------- 7. 푸터 (flex) ---------- */
+
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 64px;
     margin-top: 40px;
     padding: 0 40px;
-    height: 64px;
     background-color: #1b4332;
     color: #fff;
     font-size: 14px;
 }
-.links {
+.sns {
     display: flex;
     gap: 18px;
-    font-weight: 600;
+    font-weight: 700;
 }
-.links a:hover {
+.sns a:hover {
     text-decoration: underline;
 }
