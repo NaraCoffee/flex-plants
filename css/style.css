@@ -1,3 +1,4 @@
+/* 기본 설정 */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,7 @@ a {
 body {
     font-family: "Noto Sans KR", sans-serif;
     color: #333333;
-    background-color: #f6fbf4;
+    background-color: #F6FBF4;
 }
 h1,
 h2,
@@ -22,79 +23,78 @@ h3 {
     font-family: "Do Hyeon", sans-serif;
     font-weight: normal;
 }
-
 main {
-   max-width: 1000px;
-   margin : auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
 }
-section h2 {
-    font-size: 30px;
-    color: #2d6a4f;
-    margin: 50px 0 16px;
+h2 {
+    margin: 40px 0 16px;
+    font-size: 28px;
+    color: #2D6A4F;
 }
 
-
+/* header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 68px;
-    padding: 0 40px;
-    background-color: #2d6a4f;
+    padding: 16px 40px;
+    background-color: #2D6A4F;
     color: #fff;
 }
 .logo {
-    font-size: 30px;
+    font-size: 28px;
 }
 .menu {
     display: flex;
     gap: 24px;
-    font-weight: 700;
 }
-.menu li a:hover {
-    text-decoration: underline;
+.menu a:hover {
+    color: #FFD166;
 }
 
+/* 메인 배너 */
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     height: 280px;
     margin-top: 32px;
-    background-color: #d8f3dc;
-}
-.hero .sub {
-    font-size: 14px;
-    letter-spacing: 8px;
-    color: #52796f;
+    background-color: #D8F3DC;
 }
 .hero h2 {
     margin: 0;
-    font-size: 44px;
+    font-size: 40px;
 }
-.btn-wrap {
+.sub {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 13px;
+    color: #52796F;
+}
+.buttons {
     display: flex;
     gap: 12px;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 .btn {
-    padding: 14px 20px;
-    border: 2px solid #2d6a4f;
-    background-color: #2d6a4f;
+    padding: 10px 20px;
+    background-color: #2D6A4F;
     color: #fff;
-    font-weight: 700;
-}
-.btn.line {
-    background-color: #fff;
-    color: #2d6a4f;
 }
 .btn:hover {
-    opacity: 0.8;
+    background-color: #1B4332;
+}
+.line {
+    background-color: #fff;
+    color: #2D6A4F;
+    border: 2px solid #2D6A4F;
 }
 
-
+/* 이달의 화분 */
 .cards {
     display: flex;
     gap: 24px;
@@ -103,25 +103,20 @@ header {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    min-height: 298px;
-    padding: 28px 24px 22px;
+    gap: 8px;
+    padding: 24px;
     background-color: #fff;
-    border: 1px solid #e3ece5;
+    border: 1px solid #D8F3DC;
 }
-.card.pick {
-    border: 2px solid #2d6a4f;
+.card:nth-child(2) {
+    border: 2px solid #2D6A4F;
 }
-.card .icon {
+.icon {
     font-size: 48px;
     text-align: center;
 }
 .card h3 {
-    font-size: 24px;
-}
-.card p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 22px;
 }
 .price {
     display: flex;
@@ -129,23 +124,18 @@ header {
     align-items: center;
     margin-top: auto;
 }
-.price strong {
-    font-size: 17px;
-}
 .price button {
-    padding: 8px 14px;
+    padding: 6px 14px;
     border: none;
-    background-color: #f4a261;
+    background-color: #F4A261;
     color: #fff;
-    font-family: inherit;
-    font-weight: 700;
     cursor: pointer;
 }
 .price button:hover {
-    background-color: #e76f51;
+    background-color: #E76F51;
 }
 
-
+/* step & tags */
 .step {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -169,7 +159,6 @@ header {
     margin: 6px 0;
     font-size: 22px;
 }
-
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -184,12 +173,11 @@ header {
     font-size: 14px;
 }
 
+/* 매장 둘러보기 */
 .gallery {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas:
-        "main corner gift"
-        "main cafe class";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 150px 150px;
     gap: 16px;
 }
 .gallery li {
@@ -197,32 +185,30 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    height: 150px;
+    gap: 8px;
     background-color: #fff;
-    border: 1px solid #e3ece5;
+    border: 1px solid #D8F3DC;
 }
-.gallery li:nth-child(1) {
-    grid-area: main;
-    height: auto;
-    background-color: #2d6a4f;
+.gallery li:hover {
+    border-color: #2D6A4F;
+}
+.gallery li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #2D6A4F;
     color: #fff;
 }
-.gallery li:nth-child(2) { grid-area: corner; }
-.gallery li:nth-child(3) { grid-area: gift; }
-.gallery li:nth-child(4) { grid-area: cafe; }
-.gallery li:nth-child(5) { grid-area: class; }
 .emoji {
     font-size: 40px;
 }
-.gallery li:nth-child(1) .emoji {
+.gallery li:first-child .emoji {
     font-size: 80px;
 }
 .gallery h3 {
-    font-size: 22px;
+    font-size: 20px;
 }
 
-
+/* form */
 form {
     display: flex;
     align-items: center;
@@ -257,7 +243,7 @@ form button:hover {
     background-color: #1b4332;
 }
 
-
+/* footer */
 footer {
     display: flex;
     justify-content: space-between;
