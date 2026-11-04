@@ -15,7 +15,7 @@ body {
     font-family: "Noto Sans KR", sans-serif;
     color: #333333;
     background-color: #f6fbf4;
-    padding-top: 68px;          /* 고정된 헤더 높이만큼 아래로 밀기 */
+    padding-top: 68px;         
 }
 h1,
 h2,
@@ -24,7 +24,7 @@ h3 {
     font-weight: normal;
 }
 
-/* ---------- 공통 ---------- */
+
 main {
     padding: 0 40px;
 }
@@ -34,13 +34,12 @@ section h2 {
     margin: 50px 0 16px;
 }
 
-/* ---------- 1. 헤더 (flex) ---------- */
 header {
-    position: fixed;            /* 스크롤해도 화면 맨 위에 고정 */
+    position: fixed;           
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;               /* 다른 요소보다 위에 보이게 */
+    z-index: 100;               
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +60,6 @@ header {
     text-decoration: underline;
 }
 
-/* ---------- 2. 히어로 (flex / column) ---------- */
 .hero {
     display: flex;
     flex-direction: column;
@@ -101,13 +99,12 @@ header {
     opacity: 0.8;
 }
 
-/* ---------- 3. 이달의 화분 (flex) ---------- */
 .cards {
     display: flex;
     gap: 24px;
 }
 .card {
-    position: relative;         /* 배지의 기준점 */
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -118,9 +115,8 @@ header {
     border: 1px solid #e3ece5;
 }
 .card:hover {
-    border-color: #2d6a4f;                /* 마우스를 올리면 테두리가 초록색으로 */
-    box-shadow: 0 0 0 1px #2d6a4f;        /* 1px 더 두껍게 (레이아웃은 안 밀림) */
-}
+    border-color: #2d6a4f;              
+    box-shadow: 0 0 0 1px #2d6a4f;       
 .card .icon {
     font-size: 48px;
     text-align: center;
@@ -154,7 +150,7 @@ header {
     background-color: #e76f51;
 }
 
-/* 배지 (position: absolute) */
+
 .badge {
     position: absolute;
     top: 12px;
@@ -170,7 +166,7 @@ header {
     background-color: #f4a261;
 }
 
-/* ---------- 4. 키우는 법 3단계 (grid) ---------- */
+
 .step {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -195,7 +191,7 @@ header {
     font-size: 22px;
 }
 
-/* ---------- 태그 (flex wrap) ---------- */
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -210,7 +206,6 @@ header {
     font-size: 14px;
 }
 
-/* ---------- 5. 매장 둘러보기 (grid-template-areas) ---------- */
 .gallery {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -249,7 +244,6 @@ header {
     font-size: 22px;
 }
 
-/* ---------- 6. 새 소식 받기 (flex) ---------- */
 form {
     display: flex;
     align-items: center;
@@ -284,7 +278,7 @@ form button:hover {
     background-color: #1b4332;
 }
 
-/* ---------- 7. 푸터 (flex) ---------- */
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -305,7 +299,6 @@ footer {
     text-decoration: underline;
 }
 
-/* ---------- 위로 올라가는 고정 버튼 ---------- */
 .top-btn {
     position: fixed;
     right: 30px;
